@@ -31,7 +31,6 @@ public class CityList {
         cities.add(city);
     }
 
-
     /**
      * This returns a sorted list of cities
      * @return
@@ -42,6 +41,19 @@ public class CityList {
         Collections.sort(list);
         return list;
     }
+
+    public void hasCity(City city){
+        if(cities.contains(city)){
+            cities.remove(city);
+        }else{
+            throw new IllegalArgumentException("The City was not Found: " + city);
+        }
+    }
+
+    public int countCity(){
+        return cities.size();
+    }
+
 
 
 
