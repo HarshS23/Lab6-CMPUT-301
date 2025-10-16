@@ -42,18 +42,44 @@ public class CityList {
         return list;
     }
 
-    public void hasCity(City city){
-        if(cities.contains(city)){
-            cities.remove(city);
-        }else{
-            throw new IllegalArgumentException("The City was not Found: " + city);
-        }
+
+    // lab 6
+   /**
+    * This methods takes in a City type as its argument
+    * @param city
+    * This method will return and remove the city if the city is contained in the list
+    * @return true or false
+    */
+    public boolean hasCity(City city){
+       if(cities.contains(city)){
+           return true;
+       }else{
+           return false;
+       }
     }
 
+    /**
+     *
+     * @return list size
+     *
+     * */
     public int countCity(){
         return cities.size();
     }
 
+    /**
+     * @param city
+     * @return boolean
+     * @throws IllegalArgumentException
+     * */
+    public boolean deleteCity(City city){
+        if(cities.contains(city)){
+            cities.remove(city);
+            return true;
+        }else{
+            throw new IllegalArgumentException("The City was not Found: " + city);
+        }
+    }
 
 
 
